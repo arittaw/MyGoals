@@ -9,7 +9,7 @@ export default function App() {
   function handleAddGoal(enteredGoalText) {
     // console.log(enteredGoalText)
     // console.log('Hello You')
-    setGoals(() => [...goals, {text: enteredGoalText, key: Math.random()}])
+    setGoals(() => [...goals, {text: enteredGoalText, key: Math.random().toString()}])
     console.log('goal', goals)
     console.log('handleAddGoal')
   }
@@ -17,6 +17,7 @@ export default function App() {
   function handleDeleteGoal(id) {
     console.log('DELETE')
     const deleteGoal = goals.filter((goal) => {return goal.key !== id})
+    setGoals(deleteGoal)
   }
 
   return (
